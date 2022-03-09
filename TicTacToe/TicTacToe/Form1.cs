@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -76,50 +76,50 @@ namespace TicTacToe
 
         private Boolean CheckWin(int n) 
         {
-            Boolean durum=true;
+            Boolean state=true;
             for (int i = 0; i < 3; i++)
             {
-                durum=true;
+                state=true;
                 for (int j = 0; j < 3; j++)
                 {
                     if (tictac[i, j] == n) continue;
-                    else durum = false;
+                    else state = false;
                 }
-                if (durum == true) break;
+                if (state == true) break;
             }
-            if (durum != true)
+            if (state != true)
             {
                 for (int i = 0; i < 3; i++)
                 {
-                    durum = true;
+                    state = true;
                     for (int j = 0; j < 3; j++)
                     {
                         if (tictac[j, i] == n) continue;
-                        else durum = false;
+                        else state = false;
                     }
-                    if (durum == true) break;
+                    if (state == true) break;
                 }
             }
-            if (durum != true)
+            if (state != true)
             {
-                durum = true;
+                state = true;
                 for (int i = 0; i < 3; i++)
                 {
                     if (tictac[i, i] == n) continue;
-                    else durum = false;
+                    else state = false;
                 }
 
             }
-            if (durum != true)
+            if (state != true)
             {
-                durum = true;
+                state = true;
                 for (int i = 0; i < 3; i++)
                 {
                     if (tictac[i, 2-i] == n) continue;
-                    else durum = false;
+                    else state = false;
                 }
             }
-            return durum;
+            return state;
 
         }
 
